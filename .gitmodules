@@ -1,0 +1,6 @@
+[submodule "ext/imgui_hex_editor"]
+	path = ext/imgui_hex_editor
+	url = https://github.com/Teselka/imgui_hex_editor
+[submodule "ext/imgui"]
+	path = ext/imgui
+	url = https://github.com/ocornut/imgui
