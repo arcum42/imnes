@@ -14,13 +14,11 @@ export module imgui_wrap;
 
 // A fair number of these will probably not actually be used, but here in case I want to use them.
 
-// (And yes, I was feeling irritable on implementing, then decided to stay with the naming scheme.)
-
 namespace ImGui_Wrap
 {
-    export void Begin(const std::string fucking_string, bool *p_open = NULL, ImGuiWindowFlags flags = 0)
+    export void Begin(const std::string str, bool *p_open = NULL, ImGuiWindowFlags flags = 0)
     {
-        ImGui::Begin((const char *)fucking_string.c_str(), p_open, flags);
+        ImGui::Begin((const char *)str.c_str(), p_open, flags);
     }
 
     // Just for consistancy.
@@ -29,24 +27,24 @@ namespace ImGui_Wrap
         ImGui::End();
     }
 
-    export bool CollapsingHeader(const std::string fucking_string, ImGuiTreeNodeFlags flags = 0)
+    export bool CollapsingHeader(const std::string str, ImGuiTreeNodeFlags flags = 0)
     {
-        return ImGui::CollapsingHeader((const char *)fucking_string.c_str(), flags);
+        return ImGui::CollapsingHeader((const char *)str.c_str(), flags);
     }
 
-    export void Text(const std::string fucking_string)
+    export void Text(const std::string str)
     {
-        ImGui::Text("%s", (const char *)fucking_string.c_str());
+        ImGui::Text("%s", (const char *)str.c_str());
     }
 
-    export void BulletText(const std::string fucking_string)
+    export void BulletText(const std::string str)
     {
-        ImGui::BulletText("%s", (const char *)fucking_string.c_str());
+        ImGui::BulletText("%s", (const char *)str.c_str());
     }
 
-    export void BulletsText(const std::vector<std::string> fucking_strings)
+    export void BulletsText(const std::vector<std::string> strs)
     {
-        for (auto str : fucking_strings)
+        for (auto str : strs)
         {
             BulletText(str);
         }
